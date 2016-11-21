@@ -126,18 +126,20 @@ int	main(int ac, char **av)
   inter.height = 720;
   inter.win = SDL_CreateWindow("Fractale Animation", 0, 0, inter.width, inter.height, 0);
   inter.pix = SDL_CreateRGBSurface(0, inter.width, inter.height, 32, 0, 0, 0, 0);
-  fractale(c, &inter);
-  screen = SDL_GetWindowSurface(inter.win);
-  SDL_BlitSurface(inter.pix, NULL, screen, &rect);
-  SDL_UpdateWindowSurface(inter.win);
   int delay = 0;
   while( 1 ){
+    fractale(c, &inter);
+    screen = SDL_GetWindowSurface(inter.win);
+    SDL_BlitSurface(inter.pix, NULL, screen, &rect);
+    SDL_UpdateWindowSurface(inter.win);
     SDL_PollEvent( &event );
       switch( event.type ){
         case SDL_KEYDOWN:
           return 0;
           break;
       }
+      c.Rm += 0.01;
+      c.Im -= 0.01;
     }
   return (0);
 }
