@@ -5,7 +5,7 @@
 ** Login   <orafrost@epitech.net>
 **
 ** Started on  Wed Nov  2 16:11:13 2016 guillame verrier
-** Last update Mon Nov 21 18:03:21 2016 guillame verrier
+** Last update Mon Nov 21 19:24:10 2016 guillame verrier
 */
 
 #include "gui.h"
@@ -59,9 +59,9 @@ t_complex	convert(int x, int y)
   t_complex	pos;
   double	p[2];
 
-  p[0] = ((double)x / 999);
-  p[1] = ((double)y / 899);
-  pos.Rm = p[0] * 3 - 2;
+  p[0] = ((double)x / 1919);
+  p[1] = ((double)y / 1079);
+  pos.Rm = p[0] * 3 - 1.3;
   pos.Im = p[1] * 3 - 1.2;
   return (pos);
 }
@@ -115,20 +115,26 @@ int	main(int ac, char **av)
   SDL_Rect rect;
   SDL_Surface *screen;
   SDL_Event event;
+  int	a;
 
+  a = 0;
   rect.x = 0;
   rect.y = 0;
   rect.h = 720;
   rect.w = 1280;
   c.Rm = atof(av[1]);
   c.Im = atof(av[2]);
-  inter.width = 1280;
-  inter.height = 720;
+  inter.width = 1920;
+  inter.height = 1080;
   inter.win = SDL_CreateWindow("Fractale Animation", 0, 0, inter.width, inter.height, 0);
   inter.pix = SDL_CreateRGBSurface(0, inter.width, inter.height, 32, 0, 0, 0, 0);
   int delay = 0;
-  while( 1 ){
-    fractale(c, &inter);
+  while(1){
+    if (a == 0)
+      {
+	fractale(c, &inter);
+	a += 1;
+      }
     screen = SDL_GetWindowSurface(inter.win);
     SDL_BlitSurface(inter.pix, NULL, screen, &rect);
     SDL_UpdateWindowSurface(inter.win);
@@ -138,8 +144,9 @@ int	main(int ac, char **av)
           return 0;
           break;
       }
-      c.Rm += 0.01;
-      c.Im -= 0.01;
+      /* printf("%f %f\n", c.Im, c.Rm); */
+      /* c.Rm += 0.01; */
+      /* c.Im -= 0.01; */
     }
   return (0);
 }
