@@ -5,7 +5,7 @@
 ** Login   <orafrost@epitech.net>
 **
 ** Started on  Wed Nov  2 16:11:13 2016 guillame verrier
-** Last update Sat Nov 19 18:29:19 2016 guillame verrier
+** Last update Mon Nov 21 18:03:21 2016 guillame verrier
 */
 
 #include <lapin.h>
@@ -87,6 +87,11 @@ void			fractale(t_complex c, t_gui *gui)
 	  pos = convert(i, b);
 	  position.x = i;
 	  position.y = b;
+	  /* pour la fractale de mandelbrot met
+	     t = check_pixel(pos, c);
+	     et tu met c.Rm = 0 et c.Im = 0
+	     dans le main
+	  */
 	  t = check_pixel(c, pos);
 	  if (t == IT_MAX)
 	    col.argb[1] = 255;
