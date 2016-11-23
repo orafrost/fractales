@@ -190,6 +190,7 @@ void      fractale(t_complex c, uint32_t* pix, fractale_instance_t* inst)
   int     t;
 
   position.x = -1;
+  printf("%f %f\n", inst->im, inst->re);
   while (++position.x < inst->width)
     {
       position.y = -1;

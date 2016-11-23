@@ -6,10 +6,10 @@
         <parameter type="bool" name="Mandelbrot" default="0">
                 <name>Mandelbrot</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Imaginaire" default="250" min="0" max="1000" factor="500">
+        <parameter type="simplekeyframe" name="Imaginaire" default="250" min="-1000" max="1000" factor="500">
                 <name>Imaginaire</name>
         </parameter>
-	<parameter type="simplekeyframe" name="Reel" default="250" min="0" max="1000" factor="500">
+	<parameter type="simplekeyframe" name="Reel" default="250" min="-1000" max="1000" factor="500">
                 <name>Reel</name>
         </parameter>
         <parameter type="simplekeyframe" name="Iteration" default="150" min="0" max="300" factor="1">
