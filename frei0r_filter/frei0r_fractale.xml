@@ -1,0 +1,22 @@
+<!DOCTYPE kpartgui>
+<effect tag="frei0r.invert1r" id="frei0r.invert1r">
+	<name>Fractale</name>
+	<description>Generate fractale</description>
+	<author>Adrien Chaix and Guillaume Verrier</author>
+        <parameter type="simplekeyframe" name="Imaginaire" default="250" min="0" max="1000" factor="500">
+                <name>Imaginaire</name>
+        </parameter>
+	<parameter type="simplekeyframe" name="Reel" default="250" min="0" max="1000" factor="500">
+                <name>Reel</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Iteration" default="150" min="0" max="300" factor="1">
+                <name>iteration</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Scope X" default="250" min="0" max="1000" factor="500">
+                <name>Scope X</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Scope Y" default="250" min="0" max="1000" factor="500">
+                <name>Scope Y</name>
+        </parameter>
+
+</effect>
