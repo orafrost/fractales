@@ -5,9 +5,10 @@
 ** Login   <orafrost@epitech.net>
 **
 ** Started on  Wed Nov  2 16:11:13 2016 guillame verrier
-** Last update Mon Nov 21 19:24:10 2016 guillame verrier
+** Last update Wed Nov 23 21:06:53 2016 guillame verrier
 */
 
+#include <pthread.h>
 #include "gui.h"
 
 void    tekpixel(SDL_Surface *pix,
@@ -58,30 +59,38 @@ t_complex	convert(int x, int y)
 {
   t_complex	pos;
   double	p[2];
+  double	start[2];
+  double	stop[2];
 
+  start[0] = -2;
+  start[1] = -0.25;
+  stop[0] = 0.5;
+  stop[1] = 0.5;
   p[0] = ((double)x / 1919);
   p[1] = ((double)y / 1079);
-  pos.Rm = p[0] * 3 - 1.3;
-  pos.Im = p[1] * 3 - 1.2;
+  pos.Rm = p[0] * (stop[0] - start[0]) + start[0];
+  pos.Im = p[1] * (stop[1] - start[1]) + start[1];
   return (pos);
 }
 
-void			fractale(t_complex c, t_gui *gui)
+void		*fractale(void *glob)
 {
-  int			i;
-  int			b;
-  t_complex		pos;
-  t_pos	position;
-  t_color		col;
-  int			t;
+  int		i;
+  int		b;
+  t_glob	*global;
+  t_complex	pos;
+  t_pos		position;
+  t_color	col;
+  int		t;
 
-  i = 0;
+  global = glob;
+  i = global->d;
   col.argb[0] = 0;
   col.argb[3] = 255;
-  while (i < gui->width)
+  while (i < global->f)
     {
       b = 0;
-      while (b < gui->height)
+      while (b < global->gui->height)
 	{
 	  col.argb[1] = 0;
 	  col.argb[2] = 0;
@@ -93,15 +102,15 @@ void			fractale(t_complex c, t_gui *gui)
 	     et tu met c.Rm = 0 et c.Im = 0
 	     dans le main
 	  */
-	  t = check_pixel(c, pos);
+	  t = check_pixel(global->c, pos);
 	  if (t == IT_MAX)
 	    col.argb[1] = 255;
 	  else
 	    {
-	      col.argb[1] = ((double)t / IT_MAX * log(t) * 255 / 1.5);
-	      col.argb[0] = ((double)t / IT_MAX * t / 2 * 255)* 5;
+	      /* col.argb[1] = ((double)t / IT_MAX * log(t) * 255 / 1.5); */
+	      col.argb[1] = ((double)t / IT_MAX * 255) * 4;
 	    }
-	  tekpixel(gui->pix, &position, &col);
+	  tekpixel(global->gui->pix, &position, &col);
 	  b += 1;
 	}
       i += 1;
@@ -111,11 +120,13 @@ void			fractale(t_complex c, t_gui *gui)
 int	main(int ac, char **av)
 {
   t_gui		inter;
+  t_glob	glob[4];
+  pthread_t	pl[4];
   t_complex	c;
-  SDL_Rect rect;
-  SDL_Surface *screen;
-  SDL_Event event;
-  int	a;
+  SDL_Rect	rect;
+  SDL_Surface	*screen;
+  SDL_Event	event;
+  int		a;
 
   a = 0;
   rect.x = 0;
@@ -128,25 +139,43 @@ int	main(int ac, char **av)
   inter.height = 1080;
   inter.win = SDL_CreateWindow("Fractale Animation", 0, 0, inter.width, inter.height, 0);
   inter.pix = SDL_CreateRGBSurface(0, inter.width, inter.height, 32, 0, 0, 0, 0);
+  for (int n = 0; n < 4; n ++)
+    {
+      glob[n].c = c;
+      glob[n].gui = &inter;
+      glob[n].d = n * 480;
+      glob[n].f = n * 480 + 481;
+    }
   int delay = 0;
   while(1){
     if (a == 0)
       {
-	fractale(c, &inter);
-	a += 1;
+	for (int n = 0; n < 4; n ++)
+	  {
+	    pthread_create(&pl[n], NULL, fractale, &glob[n]);
+	  }
+	for (int n = 0; n < 4; n ++)
+	  {
+	    pthread_join(pl[n], ((void**)NULL));
+	  }
+	/* a += 1; */
       }
     screen = SDL_GetWindowSurface(inter.win);
     SDL_BlitSurface(inter.pix, NULL, screen, &rect);
     SDL_UpdateWindowSurface(inter.win);
     SDL_PollEvent( &event );
-      switch( event.type ){
-        case SDL_KEYDOWN:
-          return 0;
-          break;
-      }
-      /* printf("%f %f\n", c.Im, c.Rm); */
-      /* c.Rm += 0.01; */
-      /* c.Im -= 0.01; */
+    switch( event.type ){
+    case SDL_KEYDOWN:
+      return 0;
+      break;
     }
+    /* printf("%f %f\n", c.Im, c.Rm); */
+    /* for (int n = 0; n < 4; n ++) */
+    /*   { */
+    /* 	glob[n].c.Rm += 0.01; */
+    /* 	/\* glob[n].c.Im -= 0.01; *\/ */
+    /*   } */
+  }
   return (0);
 }
+
