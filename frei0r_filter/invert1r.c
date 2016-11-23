@@ -44,7 +44,7 @@ void f0r_get_plugin_info(f0r_plugin_info_t* contrast0r_info)
   contrast0r_info->frei0r_version = FREI0R_MAJOR_VERSION;
   contrast0r_info->major_version = 0; 
   contrast0r_info->minor_version = 2; 
-  contrast0r_info->num_params =  5; 
+  contrast0r_info->num_params =  10; 
   contrast0r_info->explanation = "Generate Fractale";
 }
 
@@ -53,30 +53,60 @@ void f0r_get_param_info(f0r_param_info_t* info, int param_index)
   printf("get info : %d\n", param_index);
   switch(param_index)
   {
-  case 0:
-    info->name = "Imaginaire";
-    info->type = F0R_PARAM_DOUBLE;
-    info->explanation = "The Imaginaire value";
-    break;
-  case 1:
+  case MANDELBROT:
+        info->name = "Mandelbrot";
+        info->type = F0R_PARAM_BOOL;
+        info->explanation = "Display Mandelbrot fractal";
+        break;
+  case IM:
+        info->name = "Imaginaire";
+        info->type = F0R_PARAM_DOUBLE;
+        info->explanation = "The Imaginaire value";
+        break;
+  case RE:
         info->name = "Reel";
         info->type = F0R_PARAM_DOUBLE;
         info->explanation = "The Real value";
         break;
-  case 2:
+  case IT_MAX:
         info->name = "Iteration";
         info->type = F0R_PARAM_DOUBLE;
         info->explanation = "The maximum iteration";
         break;
-  case 3:
+  case SX:
         info->name = "Scope X";
         info->type = F0R_PARAM_DOUBLE;
         info->explanation = "The Scope X value";
         break;
-  case 4:
+  case SY:
         info->name = "Scope Y";
         info->type = F0R_PARAM_DOUBLE;
         info->explanation = "The Scope Y value";
+        break;
+  case OX:
+        info->name = "Origin X";
+        info->type = F0R_PARAM_DOUBLE;
+        info->explanation = "The Origin X value";
+        break;
+  case OY:
+        info->name = "Origin Y";
+        info->type = F0R_PARAM_DOUBLE;
+        info->explanation = "The Origin Y value";
+        break;
+  case RC:
+        info->name = "Red Component";
+        info->type = F0R_PARAM_DOUBLE;
+        info->explanation = "The Red component value";
+        break;
+  case GC:
+        info->name = "Green Component";
+        info->type = F0R_PARAM_DOUBLE;
+        info->explanation = "The Green component value";
+        break;
+  case BC:
+        info->name = "Blue Component";
+        info->type = F0R_PARAM_DOUBLE;
+        info->explanation = "The Blue component value";
         break;
   }
 }
@@ -96,64 +126,30 @@ void f0r_destruct(f0r_instance_t instance)
 void f0r_set_param_value(f0r_instance_t instance, 
                          f0r_param_t param, int param_index)
 {
-  printf("param %d \n", param_index);
   assert(instance);
   fractale_instance_t* inst = (fractale_instance_t*)instance;
-  
   printf("param %d value %f\n", param_index, *((double *)param));
   switch(param_index)
   {
-  case 0:
-    inst->im = *((double *)param);
-    break;
-  case 1:
-    inst->re = *((double *)param);
-    break;
-  case 2:
-    inst->it_max = *((double *)param);
-    break;
-  case 3:
-    inst->sx = *((double *)param);
-    break;
-  case 4:
-    inst->sy = *((double *)param);
-    break;
+    case MANDELBROT: inst->mandelbrot = *((double *)param); break;  
+    case IM: inst->im = *((double *)param); break;
+    case RE: inst->re = *((double *)param); break;
+    case IT_MAX: inst->it_max = *((double *)param); break;
+    case SX: inst->sx = *((double *)param); break;
+    case SY: inst->sy = *((double *)param); break;
+    case OX: inst->ox = *((double *)param) - 10; break;
+    case OY: inst->oy = *((double *)param) - 10; break;
+    case RC: inst->rc = *((double *)param); break;
+    case GC: inst->gc = *((double *)param); break;
+    case BC: inst->bc = *((double *)param); break;
   }
 }
 
 void f0r_get_param_value(f0r_instance_t instance,
                          f0r_param_t param, int param_index)
 {
-  assert(instance);
-  fractale_instance_t* inst = (fractale_instance_t*)instance;
-  
-  switch(param_index)
-  {
-  case 0:
-    printf("Param : %f\n", *((double*)param));
-    break;
-  }
+
 }
-
-
-
-void    tekpixel(uint32_t* pix,
-                 t_pos *pos,
-                 t_color *color, int w, int h)
-{
-  pix[pos->y * w + pos->x] = color->full;
-}
-
-
-double    ab(t_complex pos)
-{
-  double  ret;
-
-  ret = pos.Im * pos.Im + pos.Rm * pos.Rm;
-  return (ret);
-}
-
-
 
 int   check_pixel(t_complex c, t_complex pos, int it_max)
 {
@@ -174,59 +170,48 @@ int   check_pixel(t_complex c, t_complex pos, int it_max)
   return (i);
 }
 
-t_complex convert(int x, int y)
+t_complex convert(t_pos *posIn, fractale_instance_t* inst)
 {
   t_complex pos;
   double  p[2];
 
-  p[0] = ((double)x / 1919);
-  p[1] = ((double)y / 1079);
-  pos.Rm = p[0] * 3 - 1.3;
-  pos.Im = p[1] * 3 - 1.2;
+  p[0] = ((double)posIn->x / inst->sx);
+  p[1] = ((double)posIn->y / inst->sy);
+  pos.Rm = p[0] * 3 - inst->ox;
+  pos.Im = p[1] * 3 - inst->oy;
   return (pos);
 }
 
-void      fractale(t_complex c, uint32_t* pix,fractale_instance_t* inst)
+void      fractale(t_complex c, uint32_t* pix, fractale_instance_t* inst)
 {
-  int     i;
-  int     b;
   t_complex   pos;
   t_pos position;
   t_color   col;
   int     t;
 
-  i = 0;
-  col.argb[0] = 0;
-  col.argb[3] = 255;
-  while (i < inst->width)
+  position.x = -1;
+  while (++position.x < inst->width)
     {
-      b = 0;
-      while (b < inst->height)
-  {
-    col.argb[1] = 0;
-    col.argb[2] = 0;
-    pos = convert(i, b);
-    position.x = i;
-    position.y = b;
-    /* pour la fractale de mandelbrot met
-       t = check_pixel(pos, c);
-       et tu met c.Rm = 0 et c.Im = 0
-       dans le main
-    */
-    t = check_pixel(c, pos, inst->it_max);
-    if (t == inst->it_max)
+      position.y = -1;
+      while (++position.y < inst->height)
       {
         col.full = 0;
+        col.argb[3]= 255;
+        pos = convert(&position, inst);
+        if (inst->mandelbrot)
+          t = check_pixel(pos, c, inst->it_max);
+        else
+          t = check_pixel(c, pos, inst->it_max);
+        if (t == inst->it_max) {
+          col.full = 0;
+        }
+        else {
+          col.argb[2] = ((double)t / inst->it_max * t * inst->bc);
+          col.argb[1] = ((double)t / inst->it_max * t * inst->gc);
+          col.argb[0] = ((double)t / inst->it_max * t * inst->rc);
+        }
+        tekpixel(pix, &position, inst->width, &col);
       }
-    else
-      {
-        col.argb[1] = ((double)t / inst->it_max * log(t) * 255 / 1.5);
-        col.argb[0] = ((double)t / inst->it_max * exp(t) / 2 * 255)* 5;
-      }
-    tekpixel(pix, &position, &col, inst->width, inst->height);
-    b += 1;
-  }
-      i += 1;
     }
 }
 
@@ -234,16 +219,13 @@ void f0r_update(f0r_instance_t instance, double time,
                 const uint32_t* inframe, uint32_t* outframe)
 {
   assert(instance);
+  
   fractale_instance_t* inst = (fractale_instance_t*)instance;
   
-  printf("frame : %d %d | %f %f %f %f %f\n", inst->height, inst->width, inst->im, inst->re, inst->it_max, inst->sx, inst->sy);
-  unsigned int w = inst->width;
-  unsigned int h = inst->height;
-  unsigned int x,y;
   t_complex c;
   c.Rm = inst->re;
   c.Im = inst->im;
-  uint32_t* dst = outframe;  
-  fractale(c, dst, inst);
+  
+  fractale(c, outframe, inst);
 }
 

@@ -3,6 +3,9 @@
 	<name>Fractale</name>
 	<description>Generate fractale</description>
 	<author>Adrien Chaix and Guillaume Verrier</author>
+        <parameter type="bool" name="Mandelbrot" default="0">
+                <name>Mandelbrot</name>
+        </parameter>
         <parameter type="simplekeyframe" name="Imaginaire" default="250" min="0" max="1000" factor="500">
                 <name>Imaginaire</name>
         </parameter>
@@ -10,13 +13,27 @@
                 <name>Reel</name>
         </parameter>
         <parameter type="simplekeyframe" name="Iteration" default="150" min="0" max="300" factor="1">
-                <name>iteration</name>
+                <name>Iteration</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Scope X" default="250" min="0" max="1000" factor="500">
+        <parameter type="simplekeyframe" name="Scope X" default="1000" min="1" max="100000" factor="1">
                 <name>Scope X</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Scope Y" default="250" min="0" max="1000" factor="500">
+        <parameter type="simplekeyframe" name="Scope Y" default="1000" min="1" max="100000" factor="1">
                 <name>Scope Y</name>
         </parameter>
-
+        <parameter type="simplekeyframe" name="Origin X" default="622" min="0" max="1000" factor="50">
+                <name>Origin X</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Origin Y" default="579" min="0" max="1000" factor="50">
+                <name>Origin Y</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Red Component" default="255" min="0" max="255" factor="1">
+                <name>Red Component</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Green Component" default="0" min="0" max="255" factor="1">
+                <name>Green Component</name>
+        </parameter>
+        <parameter type="simplekeyframe" name="Blue Component" default="125" min="0" max="255" factor="1">
+                <name>Blue Component</name>
+        </parameter>
 </effect>
