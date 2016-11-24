@@ -1,21 +1,21 @@
-NAME= fractale-generator
+NAME		=	fractale-generator
 
-C_FILE = invert1r.c
+C_FILE		=	fractale-generator.c
 
-O_FILE = $(C_FILE:.c=.o)
+O_FILE		=	$(C_FILE:.c=.o)
 
-TPO_FILE = $(C_FILE:.c=.Tpo)
+TPO_FILE	=	$(C_FILE:.c=.Tpo)
 
-SO_FILE = $(C_FILE:.c=.so)
+SO_FILE		=	$(C_FILE:.c=.so)
 
-XML_FILE = frei0r_fractale.xml
+XML_FILE	=	frei0r_fractale.xml
 
-FREI0R_PATH = /usr/local/lib/frei0r-1/
+FREI0R_PATH	=	/usr/local/lib/frei0r-1/
 
-KDENLIVE_PATH = /usr/share/kdenlive/effects/
+KDENLIVE_PATH	=	/usr/share/kdenlive/effects/
 
 
-all: $(NAME)
+all:	$(NAME)
 
 $(NAME):
 	gcc -DHAVE_CONFIG_H -I./include -g -O2 -MT invert1r.lo -MD -MP -MF .deps/$(TPO_FILE) -c $(C_FILE)  -fPIC -DPIC -o $(O_FILE)

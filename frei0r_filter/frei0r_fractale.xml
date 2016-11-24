@@ -1,6 +1,6 @@
 <!DOCTYPE kpartgui>
-<effect tag="frei0r.invert1r" id="frei0r.invert1r">
-	<name>Fractale</name>
+<effect tag="frei0r.fractale-generator" id="frei0r.fractale-generator">
+	<name>Fractale Generator (keyframeable)</name>
 	<description>Generate fractale</description>
 	<author>Adrien Chaix and Guillaume Verrier</author>
         <parameter type="bool" name="Mandelbrot" default="0">
@@ -12,19 +12,19 @@
 	<parameter type="simplekeyframe" name="Reel" default="250" min="-1000" max="1000" factor="500">
                 <name>Reel</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Iteration" default="150" min="0" max="300" factor="1">
+        <parameter type="simplekeyframe" name="Iteration" default="150" min="0" max="600" factor="1">
                 <name>Iteration</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Scope X" default="1000" min="1" max="100000" factor="1">
+        <parameter type="simplekeyframe" name="Scope X" default="200" min="1" max="600" factor="100">
                 <name>Scope X</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Scope Y" default="1000" min="1" max="100000" factor="1">
+        <parameter type="simplekeyframe" name="Scope Y" default="200" min="1" max="600" factor="100">
                 <name>Scope Y</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Origin X" default="622" min="0" max="1000" factor="50">
+        <parameter type="simplekeyframe" name="Origin X" default="0" min="-1000" max="1000" factor="500">
                 <name>Origin X</name>
         </parameter>
-        <parameter type="simplekeyframe" name="Origin Y" default="579" min="0" max="1000" factor="50">
+        <parameter type="simplekeyframe" name="Origin Y" default="0" min="-1000" max="1000" factor="500">
                 <name>Origin Y</name>
         </parameter>
         <parameter type="simplekeyframe" name="Red Component" default="255" min="0" max="255" factor="1">
