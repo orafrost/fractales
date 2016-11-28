@@ -137,7 +137,7 @@ void f0r_set_param_value(f0r_instance_t instance,
     case RE: inst->re = value; break;
     case IT_MAX: inst->it_max = value; break;
     case SX: inst->sx = log(7.0) - log(value + 1); break;
-    case SY: inst->sy =  log(7.0) - log(value + 1); break;
+    case SY: inst->sy = log(7.0) - log(value + 1); break;
     case OX: inst->ox = value; break;
     case OY: inst->oy = value; break;
     case RC: inst->rc = value; break;
@@ -175,8 +175,6 @@ t_complex convert(t_pos *posIn, fractale_instance_t* inst)
 {
   t_complex pos;
   double  p[2];
-  double  start[2];
-  double  stop[2];
 
   p[0] = ((double)posIn->x / (inst->width - 1));
   p[1] = ((double)posIn->y / (inst->height - 1));

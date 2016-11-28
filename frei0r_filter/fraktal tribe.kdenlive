@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt LC_NUMERIC="fr_FR.UTF-8" root="/home/chaix_a" version="6.3.0" title="Anonymous Submission" producer="main bin">
+ <profile frame_rate_num="60" display_aspect_num="16" frame_rate_den="1" sample_aspect_num="1" description="HD 720p 60 fps" colorspace="709" sample_aspect_den="1" progressive="1" width="1280" height="720" display_aspect_den="9"/>
+ <producer in="0" title="Anonymous Submission" out="7200" id="1">
+  <property name="length">00:04:47:29</property>
+  <property name="eof">pause</property>
+  <property name="resource">Téléchargements/Fraktal Tribe - Dishonored.mp3</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">1</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16p</property>
+  <property name="meta.media.0.codec.sample_rate">44100</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.name">mp3</property>
+  <property name="meta.media.0.codec.long_name">MP3 (MPEG audio layer 3)</property>
+  <property name="meta.media.0.codec.bit_rate">320000</property>
+  <property name="meta.attr.TBPM.markup">155</property>
+  <property name="meta.attr.encoded_by.markup">LAME in FL Studio 12</property>
+  <property name="meta.attr.date.markup">2016</property>
+  <property name="seekable">1</property>
+  <property name="kdenlive:file_size">11522159</property>
+  <property name="kdenlive:file_hash">83e683080c3003c3769d0a75b8b4184b</property>
+  <property name="global_feed">1</property>
+ </producer>
+ <producer in="0" out="7201" id="2">
+  <property name="length">00:04:00:11</property>
+  <property name="eof">pause</property>
+  <property name="resource">0x000000ff</property>
+  <property name="aspect_ratio">1</property>
+  <property name="mlt_service">color</property>
+  <property name="kdenlive:clipname">Color Clip</property>
+  <property name="kdenlive:file_hash">9196813120dc5c505072516b15baf414</property>
+ </producer>
+ <producer in="0" out="7182" id="3">
+  <property name="length">00:03:59:19</property>
+  <property name="eof">pause</property>
+  <property name="resource">0x000000ff</property>
+  <property name="aspect_ratio">1</property>
+  <property name="mlt_service">color</property>
+  <property name="kdenlive:clipname">Color Clip</property>
+  <property name="kdenlive:file_hash">9196813120dc5c505072516b15baf414</property>
+ </producer>
+ <producer in="0" out="6437" id="4">
+  <property name="length">6438</property>
+  <property name="eof">pause</property>
+  <property name="resource">0x8080ffff</property>
+  <property name="aspect_ratio">1</property>
+  <property name="mlt_service">color</property>
+  <property name="kdenlive:clipname">Color Clip</property>
+  <property name="kdenlive:file_hash">9b7e8d36f1ba39296873fbb0c62c9221</property>
+ </producer>
+ <producer in="0" out="1471" id="5">
+  <property name="length">1472</property>
+  <property name="eof">pause</property>
+  <property name="resource">0x8080ffff</property>
+  <property name="aspect_ratio">1</property>
+  <property name="mlt_service">color</property>
+  <property name="kdenlive:clipname">Color Clip</property>
+  <property name="kdenlive:file_hash">9b7e8d36f1ba39296873fbb0c62c9221</property>
+ </producer>
+ <producer in="0" out="8641" id="6">
+  <property name="length">00:04:48:02</property>
+  <property name="eof">pause</property>
+  <property name="resource">Téléchargements/Fraktal Tribe - Dishonored (1).mp3</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16p</property>
+  <property name="meta.media.0.codec.sample_rate">44100</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.name">mp3</property>
+  <property name="meta.media.0.codec.long_name">MP3 (MPEG audio layer 3)</property>
+  <property name="meta.media.0.codec.bit_rate">320000</property>
+  <property name="meta.attr.TBPM.markup">155</property>
+  <property name="meta.attr.encoded_by.markup">LAME in FL Studio 12</property>
+  <property name="meta.attr.date.markup">2016</property>
+  <property name="seekable">1</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">1</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="kdenlive:file_size">11522159</property>
+  <property name="kdenlive:file_hash">83e683080c3003c3769d0a75b8b4184b</property>
+ </producer>
+ <playlist kdenlive:customeffects="&lt;customeffects/>&#xa;" id="main bin">
+  <property name="kdenlive:customeffects">&lt;customeffects/>
+</property>
+  <property name="kdenlive:docproperties.documentid">1480084293013</property>
+  <property name="kdenlive:docproperties.enableproxy">0</property>
+  <property name="kdenlive:docproperties.generateimageproxy">0</property>
+  <property name="kdenlive:docproperties.generateproxy">0</property>
+  <property name="kdenlive:docproperties.kdenliveversion">15.12.3</property>
+  <property name="kdenlive:docproperties.position">3663</property>
+  <property name="kdenlive:docproperties.profile">atsc_720p_60</property>
+  <property name="kdenlive:docproperties.projectfolder">kdenlive</property>
+  <property name="kdenlive:docproperties.proxyextension">mpg</property>
+  <property name="kdenlive:docproperties.proxyimageminsize">2000</property>
+  <property name="kdenlive:docproperties.proxyminsize">1000</property>
+  <property name="kdenlive:docproperties.proxyparams">-s 640x480 -g 5 -qscale 6 -ab 128k -vcodec mpeg2video -acodec mp2</property>
+  <property name="kdenlive:docproperties.version">0.91</property>
+  <property name="kdenlive:docproperties.verticalzoom">1</property>
+  <property name="kdenlive:docproperties.zonein">7125</property>
+  <property name="kdenlive:docproperties.zoneout">7204</property>
+  <property name="kdenlive:docproperties.zoom">8</property>
+  <property name="kdenlive:documentnotes"/>
+  <property name="kdenlive:clipgroups">&lt;groups/>
+</property>
+  <property name="kdenlive:docproperties.renderaudiobitrate">160</property>
+  <property name="kdenlive:docproperties.renderbitrate">20</property>
+  <property name="kdenlive:docproperties.rendercategory">MP4</property>
+  <property name="kdenlive:docproperties.renderendguide">-1</property>
+  <property name="kdenlive:docproperties.renderexportaudio">0</property>
+  <property name="kdenlive:docproperties.renderguide">0</property>
+  <property name="kdenlive:docproperties.renderplay">0</property>
+  <property name="kdenlive:docproperties.renderprofile">H.264/AAC fast</property>
+  <property name="kdenlive:docproperties.renderratio">1</property>
+  <property name="kdenlive:docproperties.renderrescale">0</property>
+  <property name="kdenlive:docproperties.renderrescaleheight">240</property>
+  <property name="kdenlive:docproperties.renderrescalewidth">426</property>
+  <property name="kdenlive:docproperties.renderscanning">0</property>
+  <property name="kdenlive:docproperties.renderstartguide">-1</property>
+  <property name="kdenlive:docproperties.rendertcoverlay">0</property>
+  <property name="kdenlive:docproperties.rendertctype">0</property>
+  <property name="kdenlive:docproperties.rendertwopass">0</property>
+  <property name="kdenlive:docproperties.renderurl">kdenlive/test.mp4</property>
+  <property name="kdenlive:docproperties.renderzone">1</property>
+  <property name="xml_retain">1</property>
+  <entry in="0" producer="1" out="7200"/>
+  <entry in="0" producer="2" out="124"/>
+  <entry in="0" producer="3" out="149"/>
+  <entry in="0" producer="4" out="149"/>
+  <entry in="0" producer="5" out="149"/>
+  <entry in="0" producer="6" out="8641"/>
+ </playlist>
+ <producer in="0" out="500" id="black">
+  <property name="length">15000</property>
+  <property name="eof">pause</property>
+  <property name="resource">black</property>
+  <property name="aspect_ratio">0</property>
+  <property name="mlt_service">colour</property>
+ </producer>
+ <playlist id="black_track">
+  <entry in="0" producer="black" out="7182"/>
+ </playlist>
+ <playlist id="playlist1">
+  <property name="kdenlive:track_name">Audio 2</property>
+  <property name="kdenlive:audio_track">1</property>
+ </playlist>
+ <playlist id="playlist2">
+  <property name="kdenlive:track_name">Audio 1</property>
+  <property name="kdenlive:audio_track">1</property>
+ </playlist>
+ <playlist id="playlist3">
+  <property name="kdenlive:track_name">Video 3</property>
+ </playlist>
+ <producer in="0" title="Anonymous Submission" out="7200" id="1_playlist4">
+  <property name="length">00:04:48:01</property>
+  <property name="eof">pause</property>
+  <property name="resource">Téléchargements/Fraktal Tribe - Dishonored.mp3</property>
+  <property name="audio_index">0</property>
+  <property name="video_index">-1</property>
+  <property name="mute_on_pause">1</property>
+  <property name="mlt_service">avformat-novalidate</property>
+  <property name="seekable">1</property>
+  <property name="kdenlive:file_size">11522159</property>
+  <property name="kdenlive:file_hash">83e683080c3003c3769d0a75b8b4184b</property>
+  <property name="global_feed">1</property>
+  <property name="xml">was here</property>
+  <property name="meta.media.nb_streams">1</property>
+  <property name="meta.media.0.stream.type">audio</property>
+  <property name="meta.media.0.codec.sample_fmt">s16p</property>
+  <property name="meta.media.0.codec.sample_rate">44100</property>
+  <property name="meta.media.0.codec.channels">2</property>
+  <property name="meta.media.0.codec.name">mp3</property>
+  <property name="meta.media.0.codec.long_name">MP3 (MPEG audio layer 3)</property>
+  <property name="meta.media.0.codec.bit_rate">320000</property>
+  <property name="meta.attr.TBPM.markup">155</property>
+  <property name="meta.attr.encoded_by.markup">LAME in FL Studio 12</property>
+  <property name="meta.attr.date.markup">2016</property>
+ </producer>
+ <playlist id="playlist4">
+  <property name="kdenlive:track_name">Video 2</property>
+  <property name="kdenlive:locked_track">0</property>
+  <property name="kdenlive:composite">1</property>
+  <entry in="18" producer="1_playlist4" out="7200"/>
+ </playlist>
+ <playlist id="playlist5">
+  <property name="kdenlive:track_name">Video 1</property>
+  <property name="kdenlive:locked_track">0</property>
+  <property name="kdenlive:composite">1</property>
+  <entry in="0" producer="3" out="350">
+   <filter id="frei0r.fractale-generator">
+    <property name="version">0,2</property>
+    <property name="mlt_service">frei0r.fractale-generator</property>
+    <property name="kdenlive_id">frei0r.fractale-generator</property>
+    <property name="tag">frei0r.fractale-generator</property>
+    <property name="kdenlive_ix">1</property>
+    <property name="Mandelbrot">0</property>
+    <property name="Imaginaire">0=0;325=-2</property>
+    <property name="Reel">0=0;325=0</property>
+    <property name="Iteration">0=150;325=150</property>
+    <property name="Scope X">0=2;325=2</property>
+    <property name="Scope Y">0=2;325=2</property>
+    <property name="Origin X">0=0;325=0</property>
+    <property name="Origin Y">0=0;325=0</property>
+    <property name="Red Component">0=255;325=255</property>
+    <property name="Green Component">0=0;325=0</property>
+    <property name="Blue Component">0=125;325=125</property>
+    <property name="kdenlive_info"/>
+   </filter>
+  </entry>
+  <entry in="0" producer="2" out="394">
+   <filter id="filter0">
+    <property name="version">0,2</property>
+    <property name="mlt_service">frei0r.fractale-generator</property>
+    <property name="kdenlive_id">frei0r.fractale-generator</property>
+    <property name="tag">frei0r.fractale-generator</property>
+    <property name="kdenlive_ix">1</property>
+    <property name="Mandelbrot">0</property>
+    <property name="Imaginaire">0=0;359=0;392=0</property>
+    <property name="Reel">0=0;359=-2;392=-2</property>
+    <property name="Iteration">0=150;359=150;392=150</property>
+    <property name="Scope X">0=2;359=2;392=6</property>
+    <property name="Scope Y">0=2;359=2;392=0,01</property>
+    <property name="Origin X">0=0;359=0;392=-2</property>
+    <property name="Origin Y">0=0;359=0;392=0</property>
+    <property name="Red Component">0=255;359=255;392=255</property>
+    <property name="Green Component">0=0;359=0;392=0</property>
+    <property name="Blue Component">0=125;359=125;392=125</property>
+    <property name="kdenlive_info"/>
+   </filter>
+  </entry>
+  <entry in="0" producer="4" out="4965">
+   <filter id="filter1">
+    <property name="version">0,2</property>
+    <property name="mlt_service">frei0r.fractale-generator</property>
+    <property name="kdenlive_id">frei0r.fractale-generator</property>
+    <property name="tag">frei0r.fractale-generator</property>
+    <property name="kdenlive_ix">1</property>
+    <property name="Mandelbrot">1</property>
+    <property name="Imaginaire">0=0;214=0;261=0;316=-0,082;716=-0,11;929=-0,5;1185=-1,01;1414=-1,01;2066=-1,01;2291=-1,046;2663=-1,042;2931=-0,954;2983=-0,954;3338=-0,954;3382=-0,954;3502=0;3551=0;3663=0;4023=0,06;4178=0;4361=-0,262;4530=-0,264;4592=-0,264;4837=-0,31;4948=-0,31</property>
+    <property name="Reel">0=-2;214=0;261=0;316=1,4;716=-0,802;929=0,02;1185=0,02;1414=0,02;2066=0,02;2291=0,02;2663=-0,012;2931=0,082;2983=0,082;3338=0,082;3382=0,082;3502=0;3551=0;3663=0;4023=-0,032;4178=0;4361=0;4530=0;4592=0,018;4837=-0,336;4948=-2</property>
+    <property name="Iteration">0=150;214=150;261=150;316=150;716=150;929=150;1185=150;1414=150;2066=600;2291=600;2663=600;2931=600;2983=600;3338=4;3382=4;3502=300;3551=300;3663=300;4023=300;4178=300;4361=300;4530=300;4592=300;4837=300;4948=300</property>
+    <property name="Scope X">0=0,01;214=0,01;261=5,59;316=3,02;716=3,02;929=4,5;1185=5,99;1414=5,99;2066=5,99;2291=5,92;2663=5,92;2931=4,48;2983=4,48;3338=4,48;3382=4,48;3502=0,29;3551=0,29;3663=5,98;4023=5,98;4178=5,7;4361=5,99;4530=5,98;4592=5,98;4837=2,11;4948=0,06</property>
+    <property name="Scope Y">0=0,01;214=0,01;261=5,65;316=3,01;716=3,01;929=4,5;1185=5,99;1414=5,99;2066=5,99;2291=5,92;2663=5,92;2931=4,46;2983=4,46;3338=4,46;3382=4,46;3502=0,82;3551=0,82;3663=5,98;4023=5,98;4178=5,67;4361=5,99;4530=5,98;4592=5,98;4837=2,1;4948=0,06</property>
+    <property name="Origin X">0=-0,672;214=-0,672;261=-0,756;316=-0,756;716=-0,756;929=-0,08;1185=-0,08;1414=-0,08;2066=-0,062;2291=0,014;2663=0,014;2931=0,014;2983=0,014;3338=0,208;3382=0,208;3502=-0,678;3551=-2;3663=-1,768;4023=-1,768;4178=-1,768;4361=-1,75;4530=-1,744;4592=-1,744;4837=-0,726;4948=-0,726</property>
+    <property name="Origin Y">0=0;214=0;261=0;316=0;716=0;929=-0,662;1185=-0,662;1414=-0,662;2066=-0,662;2291=-0,642;2663=-0,642;2931=-0,642;2983=-0,642;3338=-0,642;3382=-0,642;3502=0,044;3551=0,044;3663=0;4023=-0,002;4178=-0,002;4361=0;4530=0,004;4592=0,004;4837=-0,014;4948=-0,014</property>
+    <property name="Red Component">0=255;214=255;261=255;316=255;716=255;929=100;1185=100;1414=0;2066=0;2291=0;2663=157;2931=157;2983=255;3338=255;3382=255;3502=255;3551=255;3663=255;4023=252;4178=252;4361=252;4530=255;4592=0;4837=0;4948=0</property>
+    <property name="Green Component">0=0;214=0;261=0;316=0;716=0;929=255;1185=255;1414=0;2066=0;2291=255;2663=153;2931=95;2983=255;3338=255;3382=255;3502=255;3551=255;3663=255;4023=158;4178=158;4361=158;4530=158;4592=255;4837=255;4948=255</property>
+    <property name="Blue Component">0=255;214=125;261=125;316=125;716=0;929=0;1185=0;1414=255;2066=170;2291=255;2663=255;2931=255;2983=255;3338=255;3382=255;3502=67;3551=67;3663=67;4023=243;4178=243;4361=243;4530=255;4592=19;4837=19;4948=19</property>
+    <property name="kdenlive_info"/>
+    <property name="disable"/>
+   </filter>
+  </entry>
+  <entry in="0" producer="5" out="1054">
+   <filter id="filter2">
+    <property name="version">0,2</property>
+    <property name="mlt_service">frei0r.fractale-generator</property>
+    <property name="kdenlive_id">frei0r.fractale-generator</property>
+    <property name="tag">frei0r.fractale-generator</property>
+    <property name="kdenlive_ix">1</property>
+    <property name="Mandelbrot">0</property>
+    <property name="Imaginaire">0=-1,952;126=1,846;239=-0,626;463=-0,678;603=-0,678;845=-0,678;947=-0,752;1047=-2</property>
+    <property name="Reel">0=0,5;126=0,5;239=-0,108;463=-0,108;603=-0,108;845=-0,108;947=-0,106;1047=-0,106</property>
+    <property name="Iteration">0=600;126=600;239=600;463=600;603=600;845=600;947=600;1047=600</property>
+    <property name="Scope X">0=1;126=1;239=1;463=3,11;603=5,7;845=5,99;947=0,75;1047=0,75</property>
+    <property name="Scope Y">0=1;126=1;239=1;463=3,08;603=5,7;845=5,99;947=0,81;1047=0,81</property>
+    <property name="Origin X">0=0;126=0;239=0;463=0,244;603=0,25;845=0,25;947=0,024;1047=0,024</property>
+    <property name="Origin Y">0=0;126=0;239=0;463=0,42;603=0,452;845=0,452;947=0,082;1047=0,082</property>
+    <property name="Red Component">0=255;126=57;239=255;463=124;603=124;845=124;947=124;1047=124</property>
+    <property name="Green Component">0=0;126=0;239=125;463=252;603=252;845=252;947=252;1047=252</property>
+    <property name="Blue Component">0=125;126=125;239=125;463=0;603=0;845=0;947=0;1047=0</property>
+    <property name="kdenlive_info"/>
+   </filter>
+  </entry>
+  <entry in="0" producer="5" out="415">
+   <filter id="filter3">
+    <property name="version">0,2</property>
+    <property name="mlt_service">frei0r.fractale-generator</property>
+    <property name="kdenlive_id">frei0r.fractale-generator</property>
+    <property name="tag">frei0r.fractale-generator</property>
+    <property name="kdenlive_ix">1</property>
+    <property name="Mandelbrot">1</property>
+    <property name="Imaginaire">0=0;222=0;408=1,492</property>
+    <property name="Reel">0=-2;222=0;408=0</property>
+    <property name="Iteration">0=600;222=600;408=600</property>
+    <property name="Scope X">0=0,56;222=0,56;408=0,56</property>
+    <property name="Scope Y">0=0,56;222=0,56;408=0,56</property>
+    <property name="Origin X">0=-0,516;222=-0,516;408=-0,516</property>
+    <property name="Origin Y">0=0;222=0;408=0</property>
+    <property name="Red Component">0=255;222=56;408=255</property>
+    <property name="Green Component">0=0;222=162;408=168</property>
+    <property name="Blue Component">0=125;222=125;408=0</property>
+    <property name="kdenlive_info"/>
+   </filter>
+  </entry>
+ </playlist>
+ <tractor in="0" title="Anonymous Submission" out="7182" global_feed="1" id="maintractor">
+  <track producer="black_track"/>
+  <track producer="playlist1" hide="video"/>
+  <track producer="playlist2" hide="video"/>
+  <track producer="playlist3"/>
+  <track producer="playlist4"/>
+  <track producer="playlist5"/>
+  <transition id="transition0">
+   <property name="a_track">0</property>
+   <property name="b_track">1</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition1">
+   <property name="a_track">0</property>
+   <property name="b_track">2</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition2">
+   <property name="a_track">0</property>
+   <property name="b_track">3</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition3">
+   <property name="a_track">0</property>
+   <property name="b_track">4</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition4">
+   <property name="a_track">0</property>
+   <property name="b_track">5</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition out="64" id="transition5">
+   <property name="a_track">4</property>
+   <property name="b_track">5</property>
+   <property name="factory">loader</property>
+   <property name="mlt_service">luma</property>
+   <property name="automatic">1</property>
+   <property name="kdenlive_id">dissolve</property>
+   <property name="force_track">0</property>
+   <property name="reverse">0</property>
+  </transition>
+  <transition in="673" out="809" id="transition6">
+   <property name="a_track">4</property>
+   <property name="b_track">5</property>
+   <property name="factory">loader</property>
+   <property name="mlt_service">luma</property>
+   <property name="automatic">1</property>
+   <property name="kdenlive_id">dissolve</property>
+   <property name="force_track">0</property>
+   <property name="reverse">1</property>
+  </transition>
+  <transition id="transition8">
+   <property name="a_track">3</property>
+   <property name="b_track">4</property>
+   <property name="version">0,9</property>
+   <property name="mlt_service">frei0r.cairoblend</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition9">
+   <property name="a_track">4</property>
+   <property name="b_track">5</property>
+   <property name="version">0,9</property>
+   <property name="mlt_service">frei0r.cairoblend</property>
+   <property name="internal_added">237</property>
+  </transition>
+ </tractor>
+</mlt>
